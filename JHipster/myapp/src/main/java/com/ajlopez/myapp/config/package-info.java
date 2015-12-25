@@ -1,0 +1,4 @@
+/**
+ * Spring Framework configuration files.
+ */
+package com.ajlopez.myapp.config;
