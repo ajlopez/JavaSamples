@@ -1,0 +1,57 @@
+<div>
+    <h2 translate="myappApp.employee.home.title">Employees</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="employee.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="myappApp.employee.home.createLabel">Create a new Employee</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="myappApp.employee.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address"><span translate="myappApp.employee.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created"><span translate="myappApp.employee.created">Created</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="salary"><span translate="myappApp.employee.salary">Salary</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees track by employee.id">
+                    <td><a ui-sref="employee.detail({id:employee.id})">{{employee.id}}</a></td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.address}}</td>
+                        <td>{{employee.created | date:'mediumDate'}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="employee.detail({id:employee.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="employee.edit({id:employee.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="employee.delete({id:employee.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
