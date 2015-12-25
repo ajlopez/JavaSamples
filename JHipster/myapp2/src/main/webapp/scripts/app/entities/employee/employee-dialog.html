@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myEmployeeLabel" translate="myapp2App.employee.home.createOrEditLabel">Create or edit a Employee</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="employee.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myapp2App.employee.firstName" for="field_firstName">FirstName</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="employee.firstName"
+                    required />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myapp2App.employee.lastName" for="field_lastName">LastName</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="employee.lastName"
+                    required />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myapp2App.employee.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="employee.address"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
