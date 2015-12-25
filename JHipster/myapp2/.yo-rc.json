@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "myapp2",
+    "packageName": "com.ajlopez.myapp2",
+    "packageFolder": "com/ajlopez/myapp2",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "90be5a445493a4605344facc4dac71531cbf8019",
+    "testFrameworks": [
+      "cucumber",
+      "protractor"
+    ]
+  }
+}
