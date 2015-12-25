@@ -1,0 +1,25 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "author",
+            "otherEntityName": "employee",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "lastName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "content",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151225165311",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "pagination": "pagination"
+}

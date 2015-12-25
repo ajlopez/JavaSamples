@@ -1,0 +1,23 @@
+{
+    "myapp2App": {
+        "comment" : {
+            "home": {
+                "title": "Comments",
+                "createLabel": "Créer un nouveau Comment",
+                "createOrEditLabel": "Créer ou éditer un Comment"
+            },
+            "created": "Un nouveau Comment a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Comment avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Comment avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Comment {{ id }} ?"
+            },
+            "detail": {
+                "title": "Comment"
+            },
+            "content": "Content",
+            "author": "Author"
+        }
+    }
+}
+
